@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../static/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="../static/plugins/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../static/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../static/plugins/angularjs/angular.min.js">  </script>
+    <!-- 分页组件开始 -->
+    <script src="../static/plugins/angularjs/pagination.js"></script>
+    <link rel="stylesheet" href="../static/plugins/angularjs/pagination.css">
+    <!-- 分页组件结束 -->
+
+
+    <script type="text/javascript" src="../static/js/base_pagination.js">  </script>
+    <script type="text/javascript" src="../static/js/service/adminService.js">  </script>
+    <script type="text/javascript" src="../static/js/controller/baseController.js">  </script>
+    <script type="text/javascript" src="../static/js/controller/adminController.js">  </script>
+
+</head>
+<body ng-app="daniel" ng-controller="adminController" ng-init="findOne('1')">
+<div class="container">
+    <form>{{entity}}
+        <div class="form-group">
+            <label for="exampleInputEmail1">用户名</label>
+            <input type="text" ng-model="entity.name" class="form-control" id="exampleInputEmail11" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">别名</label>
+            <input type="text" ng-model="entity.nickName" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" ng-model="entity.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">头像</label>
+            <img src="{{entity.avatar}}" width="50px" height="50px">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">选择头像</label>
+            <input type="file" name="file" id="exampleInputFile">
+            <button type="button" ng-click="uploadAvatar()" class="btn btn-default">上传</button>
+        </div>
+        <button type="button" class="btn btn-default">保存</button>
+    </form>
+</div>
+</body>
+</html>
